@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgentI - Yapay Zeka Ajanları Pazarı. İşletmenizi özel yapay zeka ajanlarıyla güçlendirin.">
+    <meta name="keywords" content="yapay zeka ajanları, otomasyon, iş araçları, yapay zeka, iş akışı otomasyonu">
+    <meta name="author" content="AgentI">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AgentI - Yapay Zeka Ajanları Pazarı">
+    <meta property="og:description" content="İşletmenizi özel yapay zeka ajanlarıyla güçlendirin.">
+    <meta property="og:image" content="https://your-domain.com/images/og-image.jpg">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>AgentI - Yapay Zeka Ajanları Pazarı</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="i18n.js"></script>
+    <style>
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        .dark-mode .bg-white {
+            background-color: #2d2d2d !important;
+        }
+        
+        .dark-mode .text-gray-800 {
+            color: #ffffff !important;
+        }
+        
+        .dark-mode .text-gray-600 {
+            color: #a0aec0 !important;
+        }
+        
+        .dark-mode .text-gray-700 {
+            color: #cbd5e0 !important;
+        }
+        
+        .dark-mode .border-gray-200 {
+            border-color: #4a5568 !important;
+        }
+        
+        .dark-mode .bg-gray-50 {
+            background-color: #2d3748 !important;
+        }
+        
+        .dark-mode .bg-gray-100 {
+            background-color: #4a5568 !important;
+        }
+        
+        .dark-mode .hover\:bg-gray-100:hover {
+            background-color: #4a5568 !important;
+        }
+        
+        .dark-mode .bg-gradient-to-r {
+            background-image: linear-gradient(to right, #2d3748, #1a202c) !important;
+        }
+        
+        .dark-mode .modal-content {
+            background-color: #2d2d2d;
+            color: #ffffff;
+        }
+        
+        .dark-mode .chatbot-container {
+            background-color: #2d2d2d;
+            color: #ffffff;
+        }
+        
+        .dark-mode .bg-blue-50 {
+            background-color: #2c5282 !important;
+        }
+        
+        .dark-mode .text-blue-600 {
+            color: #63b3ed !important;
+        }
+        
+        .dark-mode .hover\:bg-blue-50:hover {
+            background-color: #2c5282 !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="/">
+                    <img src="logo.png" alt="AgentI Logo" class="h-12 w-auto" style="max-height:48px;">
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-700 hover:text-blue-600 font-medium" data-i18n="nav.features">Özellikler</a>
+                <a href="#pricing" class="text-gray-700 hover:text-blue-600 font-medium" data-i18n="nav.pricing">Fiyatlandırma</a>
+                <a href="#catalog" class="text-gray-700 hover:text-blue-600 font-medium" data-i18n="nav.catalog">Katalog</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium" data-i18n="nav.testimonials">Müşteri Yorumları</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <!-- Dark Mode Toggle -->
+                <button id="darkModeToggle" class="p-2 rounded-lg hover:bg-gray-100 transition">
+                    <i class="fas fa-moon text-gray-700"></i>
+                </button>
+                <div class="relative">
+                    <select id="language-selector" class="appearance-none bg-white border border-gray-300 rounded-lg px-3 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="tr">Türkçe</option>
+                        <option value="en">English</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <i class="fas fa-chevron-down text-sm"></i>
+                    </div>
+                </div>
+                <button class="hidden md:block px-4 py-2 text-blue-600 font-medium hover:bg-blue-50 rounded-lg" data-i18n="nav.login">Giriş Yap</button>
+                <button class="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition" data-i18n="nav.getStarted">Hemen Başla</button>
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-50 to-indigo-50 py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-i18n="hero.title">İşletmenizi <span class="text-blue-600">Yapay Zeka Ajanları</span> ile Güçlendirin</h2>
+                <p class="text-lg text-gray-600 mb-8" data-i18n="hero.description">AgentI, görevleri otomatikleştiren, üretkenliği artıran ve iş akışınızı dönüştüren özel yapay zeka ajanları sunar.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#catalog" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition text-center" data-i18n="hero.browseAgents">Ajanları Keşfet</a>
+                    <a href="mailto:appearancemy@gmail.com" class="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-100 transition">
+                        <i class="fas fa-envelope mr-2"></i> <span>Bize Ulaşın</span>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="AI Agent" class="rounded-xl shadow-xl w-full max-w-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-i18n="features.title">Neden AgentI?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-i18n="features.description">Yapay zeka ajanlarımız, karmaşık görevleri insan benzeri hassasiyet ve verimlilikle gerçekleştirmek için tasarlanmıştır.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3" data-i18n="features.lightningFast.title">Şimşek Hızında</h3>
+                    <p class="text-gray-600" data-i18n="features.lightningFast.description">Ajanlarımız bilgileri saniyeler içinde işler ve görevleri tamamlar, size değerli zaman kazandırır.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3" data-i18n="features.continuousLearning.title">Sürekli Öğrenme</h3>
+                    <p class="text-gray-600" data-i18n="features.continuousLearning.description">Ajanlar zamanla gelişir, özel ihtiyaçlarınıza ve tercihlerinize uyum sağlar.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3" data-i18n="features.enterpriseSecurity.title">Kurumsal Güvenlik</h3>
+                    <p class="text-gray-600" data-i18n="features.enterpriseSecurity.description">Askeri düzeyde şifreleme, verilerinizin gizli ve güvenli kalmasını sağlar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-i18n="pricing.title">Basit, Şeffaf Fiyatlandırma</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-i18n="pricing.description">İhtiyaçlarınıza uygun planı seçin. Gizli ücret yoktur.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 pricing-card transition">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="pricing.starter.title">Başlangıç</h3>
+                    <p class="text-gray-600 mb-6" data-i18n="pricing.starter.description">Bireyler ve küçük ekipler için ideal</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-800">₺2999</span>
+                        <span class="text-gray-600">/ay</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.starter.features.agents">5 Yapay Zeka Ajanı</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.starter.features.tasks">10.000 aylık görev</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.starter.features.integrations">Temel entegrasyonlar</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times text-red-400 mr-2"></i>
+                            <span data-i18n="pricing.starter.features.support">Öncelikli destek</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition" data-i18n="nav.getStarted">Hemen Başla</button>
+                </div>
+                <div class="bg-white p-8 rounded-xl border-2 border-blue-600 shadow-lg pricing-card transition transform scale-105">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPÜLER</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="pricing.professional.title">Profesyonel</h3>
+                    <p class="text-gray-600 mb-6" data-i18n="pricing.professional.description">Büyüyen işletmeler için</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-800">₺7999</span>
+                        <span class="text-gray-600">/ay</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.professional.features.agents">20 Yapay Zeka Ajanı</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.professional.features.tasks">50.000 aylık görev</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.professional.features.integrations">Gelişmiş entegrasyonlar</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.professional.features.support">Öncelikli destek</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition" data-i18n="nav.getStarted">Hemen Başla</button>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-gray-200 pricing-card transition">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="pricing.enterprise.title">Kurumsal</h3>
+                    <p class="text-gray-600 mb-6" data-i18n="pricing.enterprise.description">Büyük organizasyonlar için</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-800">Bize Ulaşın</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.enterprise.features.agents">Sınırsız Yapay Zeka Ajanı</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.enterprise.features.tasks">200.000 aylık görev</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.enterprise.features.integrations">Tüm entegrasyonlar</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span data-i18n="pricing.enterprise.features.support">7/24 özel destek</span>
+                        </li>
+                    </ul>
+                    <a href="mailto:appearancemy@gmail.com" class="w-full block py-3 border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition text-center">Bize Ulaşın</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">AI Agent Catalog</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Browse our collection of specialized AI agents ready to transform your workflow.</p>
+            </div>
+            
+            <div class="mb-8 flex justify-between items-center">
+                <div class="flex space-x-2 overflow-x-auto pb-2">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg whitespace-nowrap">All</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 whitespace-nowrap">Social Media</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 whitespace-nowrap">Marketing</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 whitespace-nowrap">Sales</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 whitespace-nowrap">Support</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 whitespace-nowrap">Development</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 whitespace-nowrap">Content</button>
+                </div>
+                <div class="relative hidden md:block">
+                    <input type="text" placeholder="Search agents..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Instagram Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-pink-500 to-yellow-500 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Instagram Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">Instagram'da paylaşım, etkileşim ve analiz işlemlerini otomatikleştirir.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1499/ay</span>
+                            <button onclick="openModal('modal-instagram')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Facebook Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Facebook Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">Facebook sayfalarını, reklamları ve topluluk etkileşimini yönetir.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1399/ay</span>
+                            <button onclick="openModal('modal-facebook')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- YouTube Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-red-600 to-red-800 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">YouTube Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">Video optimizasyonu, içerik önerileri ve yorum yönetimi sağlar.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1599/ay</span>
+                            <button onclick="openModal('modal-youtube')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TikTok Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">TikTok Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">TikTok için viral içerik oluşturur ve planlar.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1299/ay</span>
+                            <button onclick="openModal('modal-tiktok')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Web Scraping Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2282/2282188.png" alt="Web Scraping Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Web Scraping Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">Herhangi bir web sitesinden veri çeker ve düzenler.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1699/ay</span>
+                            <button onclick="openModal('modal-scraping')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chatbot Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3095/3095587.png" alt="Chatbot Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Chatbot Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">Web siteniz için 7/24 müşteri desteği sağlar.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1199/ay</span>
+                            <button onclick="openModal('modal-chatbot')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- X (Twitter) Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">X Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">X'te tweet'leri, yanıtları ve etkileşimleri yönetir.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1299/ay</span>
+                            <button onclick="openModal('modal-x')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- LinkedIn Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">LinkedIn Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">LinkedIn'de ağ oluşturma ve içerik paylaşımını otomatikleştirir.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1499/ay</span>
+                            <button onclick="openModal('modal-linkedin')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pinterest Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3536/3536559.png" alt="Pinterest Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Pinterest Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">Pinterest için pin oluşturma ve planlamayı otomatikleştirir.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1399/ay</span>
+                            <button onclick="openModal('modal-pinterest')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Email Marketing Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3178/3178158.png" alt="Email Marketing Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">E-posta Pazarlama Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">Kişiselleştirilmiş e-posta kampanyaları oluşturur ve gönderir.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1599/ay</span>
+                            <button onclick="openModal('modal-email')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SEO Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995515.png" alt="SEO Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">SEO Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">Web sitesi içeriğini daha iyi arama sıralamaları için optimize eder.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1799/ay</span>
+                            <button onclick="openModal('modal-seo')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analytics Agent -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm agent-card transition">
+                    <div class="h-40 bg-gradient-to-r from-purple-400 to-blue-500 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" alt="Analytics Agent" class="h-24 w-24 object-contain">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Analitik Ajanı</h3>
+                        <p class="text-sm text-gray-600 mb-3">Tüm pazarlama metriklerinizi takip eder ve analiz eder.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">₺1899/ay</span>
+                            <button onclick="openModal('modal-analytics')" class="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded hover:bg-blue-100">Detaylar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="px-6 py-3 border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition" data-i18n="catalog.loadMore">Daha Fazla Ajan Göster</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4" data-i18n="testimonials.title">Müşterilerimiz Ne Diyor?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-i18n="testimonials.description">Sadece bizim sözümüze güvenmeyin. İşte müşterilerimizin söyledikleri.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Müşteri">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Ayşe Yılmaz</h4>
+                            <p class="text-gray-500 text-sm">Pazarlama Direktörü</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Instagram Ajanı bize sayısız saat kazandırdı ve etkileşimimizi %300 artırdı. Sanki ekstra bir ekip üyesimiz var gibi!"</p>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Müşteri">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Mehmet Demir</h4>
+                            <p class="text-gray-500 text-sm">E-ticaret Sahibi</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Web Scraping Ajanı ürün araştırma sürecimizi tamamen değiştirdi. Artık rakiplerimizin fiyatlarını gerçek zamanlı olarak analiz edebiliyoruz."</p>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Müşteri">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Zeynep Kaya</h4>
+                            <p class="text-gray-500 text-sm">Startup Kurucusu</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Küçük bir ekip olarak tam zamanlı bir sosyal medya yöneticisi karşılayamıyorduk. AgentI paketi tüm platformlarımızı mükemmel şekilde yönetiyor."</p>
+                    <div class="mt-4 flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">İşletmenizi Dönüştürmeye Hazır mısınız?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">İş akışlarını otomatikleştirmek ve üretkenliği artırmak için AgentI'ı kullanan binlerce işletmeye katılın.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition">Ücretsiz Deneyin</button>
+                <button class="px-8 py-4 border border-white text-white font-bold rounded-lg hover:bg-blue-700 transition">Demo Planla</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="logo-gradient"><span>A</span>gent<span>I</span></span>
+                    </h3>
+                    <p class="text-gray-400">Her boyuttaki işletme için önde gelen yapay zeka ajanları pazarı.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Ürünler</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Yapay Zeka Ajanları</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Fiyatlandırma</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Entegrasyonlar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">API</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Kaynaklar</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Dokümantasyon</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Eğitimler</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Topluluk</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Şirket</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Hakkımızda</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Kariyer</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">İletişim</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Yasal</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2024 AgentI. Tüm hakları saklıdır.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white">Gizlilik Politikası</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Kullanım Koşulları</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Çerez Politikası</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Button -->
+    <div class="chatbot">
+        <button onclick="toggleChatbot()" class="w-16 h-16 bg-blue-600 rounded-full shadow-lg flex items-center justify-center text-white hover:bg-blue-700 transition">
+            <i class="fas fa-robot text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="h-full flex flex-col">
+            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+                <h3 class="font-bold" data-i18n="chatbot.title">AgentI Asistanı</h3>
+                <button onclick="toggleChatbot()" class="text-white hover:text-gray-200">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="flex-1 p-4 overflow-y-auto bg-gray-50" id="chat-messages">
+                <div class="mb-4">
+                    <div class="bg-blue-100 text-gray-800 p-3 rounded-lg max-w-xs">
+                        <p data-i18n="chatbot.welcome">Merhaba! Ben AgentI asistanınızım. Size nasıl yardımcı olabilirim?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 border-t border-gray-200">
+                <div class="flex">
+                    <input type="text" id="chat-input" placeholder="Mesajınızı yazın..." class="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" data-i18n-placeholder="chatbot.placeholder">
+                    <button onclick="sendMessage()" class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instagram Agent Modal -->
+    <div id="modal-instagram" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-instagram')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-pink-500 to-yellow-500 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">Instagram Agent</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">$39/month</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Agent Details</h3>
+                    <p class="text-gray-700 mb-4">Our Instagram Agent automates your Instagram marketing, saving you hours of manual work while increasing engagement and growth.</p>
+                    
+                    <h4 class="font-semibold mb-2">Features:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Automated posting and scheduling</li>
+                        <li>Hashtag research and optimization</li>
+                        <li>Auto-engagement with relevant accounts</li>
+                        <li>Analytics and performance tracking</li>
+                        <li>Story creation and scheduling</li>
+                        <li>Comment moderation and response</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Requirements:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Instagram business account</li>
+                        <li>Basic content to get started</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Customer Reviews:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.9 (128 reviews)</span>
+                            </div>
+                            <p class="text-gray-700 italic">"The Instagram Agent has tripled our engagement rate in just two months!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Facebook Agent Modal -->
+    <div id="modal-facebook" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-facebook')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">Facebook Ajanı</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">$35/month</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Agent Details</h3>
+                    <p class="text-gray-700 mb-4">Our Facebook Agent manages your Facebook presence, from page management to ad optimization and community engagement.</p>
+                    
+                    <h4 class="font-semibold mb-2">Features:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Page management and optimization</li>
+                        <li>Post scheduling and automation</li>
+                        <li>Ad creation and optimization</li>
+                        <li>Community engagement and moderation</li>
+                        <li>Analytics and insights reporting</li>
+                        <li>Group management automation</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Requirements:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Facebook business page</li>
+                        <li>Admin access to the page</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Customer Reviews:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.8 (97 reviews)</span>
+                            </div>
+                            <p class="text-gray-700 italic">"Our Facebook engagement has never been better since we started using the Facebook Agent."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- YouTube Agent Modal -->
+    <div id="modal-youtube" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-youtube')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-red-600 to-red-800 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">YouTube Agent</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">$45/month</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Agent Details</h3>
+                    <p class="text-gray-700 mb-4">The YouTube Agent helps you grow your channel by optimizing videos, suggesting content ideas, and managing engagement.</p>
+                    
+                    <h4 class="font-semibold mb-2">Features:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Video SEO optimization</li>
+                        <li>Content idea generation</li>
+                        <li>Comment moderation and response</li>
+                        <li>Thumbnail creation suggestions</li>
+                        <li>Competitor analysis</li>
+                        <li>Analytics and performance tracking</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Requirements:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>YouTube channel</li>
+                        <li>Basic video content</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Customer Reviews:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.9 (112 reviews)</span>
+                            </div>
+                            <p class="text-gray-700 italic">"Our subscriber growth has increased by 200% since using the YouTube Agent!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TikTok Agent Modal -->
+    <div id="modal-tiktok" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-tiktok')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">TikTok Agent</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">$29/month</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Agent Details</h3>
+                    <p class="text-gray-700 mb-4">The TikTok Agent helps you create and schedule viral content, engage with your audience, and grow your TikTok presence.</p>
+                    
+                    <h4 class="font-semibold mb-2">Features:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Trend analysis and content suggestions</li>
+                        <li>Video scheduling and automation</li>
+                        <li>Hashtag research and optimization</li>
+                        <li>Audience engagement automation</li>
+                        <li>Performance analytics</li>
+                        <li>Duet and stitch opportunity identification</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Requirements:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>TikTok business account</li>
+                        <li>Basic video content</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Customer Reviews:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.7 (89 reviews)</span>
+                            </div>
+                            <p class="text-gray-700 italic">"We went from 0 to 50k followers in 3 months thanks to the TikTok Agent's content suggestions."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Web Scraping Agent Modal -->
+    <div id="modal-scraping" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-scraping')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2282/2282188.png" alt="Web Scraping Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">Web Scraping Agent</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">$49/month</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Agent Details</h3>
+                    <p class="text-gray-700 mb-4">The Web Scraping Agent extracts and organizes data from any website, saving you hours of manual work and providing valuable insights.</p>
+                    
+                    <h4 class="font-semibold mb-2">Features:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Customizable data extraction</li>
+                        <li>Schedule automatic scraping</li>
+                        <li>Data cleaning and organization</li>
+                        <li>Export to CSV, Excel, or database</li>
+                        <li>API integration</li>
+                        <li>Proxy rotation to avoid blocks</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Requirements:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Target website URLs</li>
+                        <li>Data fields to extract</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Customer Reviews:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.9 (134 reviews)</span>
+                            </div>
+                            <p class="text-gray-700 italic">"The Web Scraping Agent has saved us thousands in manual data collection costs."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Agent Modal -->
+    <div id="modal-chatbot" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-chatbot')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3095/3095587.png" alt="Chatbot Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">Chatbot Agent</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">$25/month</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Agent Details</h3>
+                    <p class="text-gray-700 mb-4">The Chatbot Agent provides 24/7 customer support on your website, answering common questions and collecting leads.</p>
+                    
+                    <h4 class="font-semibold mb-2">Features:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>24/7 automated customer support</li>
+                        <li>Natural language processing</li>
+                        <li>Customizable responses</li>
+                        <li>Lead capture and qualification</li>
+                        <li>FAQ automation</li>
+                        <li>Integration with your CRM</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Requirements:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Website to embed the chatbot</li>
+                        <li>Basic FAQ knowledge base</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Customer Reviews:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.8 (107 reviews)</span>
+                            </div>
+                            <p class="text-gray-700 italic">"Our customer satisfaction scores improved by 40% after implementing the Chatbot Agent."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- X (Twitter) Agent Modal -->
+    <div id="modal-x" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-x')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">X Ajanı</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">₺29/ay</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Sepete Ekle</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Ajan Detayları</h3>
+                    <p class="text-gray-700 mb-4">X Ajanı, X platformunda içerik yönetimi, etkileşim ve analiz işlemlerinizi otomatikleştirir.</p>
+                    
+                    <h4 class="font-semibold mb-2">Özellikler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Otomatik tweet oluşturma ve planlama</li>
+                        <li>Etkileşim analizi ve raporlama</li>
+                        <li>Hashtag optimizasyonu</li>
+                        <li>Takipçi etkileşimi yönetimi</li>
+                        <li>Trend analizi</li>
+                        <li>Performans takibi</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Gereksinimler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>X hesabı</li>
+                        <li>Temel içerik stratejisi</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Müşteri Yorumları:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.8 (95 yorum)</span>
+                            </div>
+                            <p class="text-gray-700 italic">"X Ajanı sayesinde etkileşim oranımız %200 arttı!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LinkedIn Agent Modal -->
+    <div id="modal-linkedin" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-linkedin')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">LinkedIn Ajanı</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">₺45/ay</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Sepete Ekle</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Ajan Detayları</h3>
+                    <p class="text-gray-700 mb-4">LinkedIn Ajanı, profesyonel ağınızı genişletmenize ve içerik stratejinizi güçlendirmenize yardımcı olur.</p>
+                    
+                    <h4 class="font-semibold mb-2">Özellikler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>İçerik oluşturma ve planlama</li>
+                        <li>Ağ oluşturma otomasyonu</li>
+                        <li>Etkileşim analizi</li>
+                        <li>Profil optimizasyonu</li>
+                        <li>Mesaj yönetimi</li>
+                        <li>Performans raporlama</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Gereksinimler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>LinkedIn hesabı</li>
+                        <li>Profesyonel profil</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Müşteri Yorumları:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                                <span class="ml-2 text-sm text-gray-600">4.9 (112 yorum)</span>
+                </div>
+                            <p class="text-gray-700 italic">"LinkedIn Ajanı sayesinde iş fırsatlarımız %300 arttı!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pinterest Agent Modal -->
+    <div id="modal-pinterest" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-pinterest')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3536/3536559.png" alt="Pinterest Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">Pinterest Ajanı</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">₺25/ay</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Sepete Ekle</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Ajan Detayları</h3>
+                    <p class="text-gray-700 mb-4">Pinterest Ajanı, görsel içerik stratejinizi güçlendirir ve etkileşiminizi artırır.</p>
+                    
+                    <h4 class="font-semibold mb-2">Özellikler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Pin oluşturma ve planlama</li>
+                        <li>Görsel optimizasyonu</li>
+                        <li>Hashtag araştırması</li>
+                        <li>Etkileşim analizi</li>
+                        <li>Board yönetimi</li>
+                        <li>Performans takibi</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Gereksinimler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Pinterest hesabı</li>
+                        <li>Temel görsel içerik</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Müşteri Yorumları:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                                <span class="ml-2 text-sm text-gray-600">4.7 (89 yorum)</span>
+                    </div>
+                            <p class="text-gray-700 italic">"Pinterest Ajanı sayesinde web sitemize gelen trafik %150 arttı!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO Agent Modal -->
+    <div id="modal-seo" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-seo')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995515.png" alt="SEO Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">SEO Ajanı</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">₺1499/ay</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Sepete Ekle</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Ajan Detayları</h3>
+                    <p class="text-gray-700 mb-4">SEO Ajanı, web sitenizin arama motoru sıralamalarını optimize eder ve organik trafiğinizi artırır.</p>
+                    
+                    <h4 class="font-semibold mb-2">Özellikler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Anahtar kelime araştırması ve optimizasyonu</li>
+                        <li>İçerik analizi ve önerileri</li>
+                        <li>Teknik SEO denetimi</li>
+                        <li>Rakip analizi</li>
+                        <li>Backlink yönetimi</li>
+                        <li>Performans raporlama</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Gereksinimler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Web sitesi</li>
+                        <li>Google Search Console erişimi</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Müşteri Yorumları:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.9 (156 yorum)</span>
+                            </div>
+                            <p class="text-gray-700 italic">"SEO Ajanı sayesinde organik trafiğimiz %250 arttı!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Marketing Agent Modal -->
+    <div id="modal-email" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-email')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3178/3178158.png" alt="Email Marketing Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">E-posta Pazarlama Ajanı</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">₺1299/ay</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Sepete Ekle</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Ajan Detayları</h3>
+                    <p class="text-gray-700 mb-4">E-posta Pazarlama Ajanı, etkili e-posta kampanyaları oluşturur ve yönetir.</p>
+                    
+                    <h4 class="font-semibold mb-2">Özellikler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Kişiselleştirilmiş e-posta oluşturma</li>
+                        <li>Otomatik kampanya planlama</li>
+                        <li>A/B testi</li>
+                        <li>Abone yönetimi</li>
+                        <li>Performans analizi</li>
+                        <li>CRM entegrasyonu</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Gereksinimler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>E-posta listesi</li>
+                        <li>Temel içerik stratejisi</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Müşteri Yorumları:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.8 (142 yorum)</span>
+                            </div>
+                            <p class="text-gray-700 italic">"E-posta Pazarlama Ajanı sayesinde açılma oranımız %40 arttı!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics Agent Modal -->
+    <div id="modal-analytics" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modal-analytics')" class="float-right text-gray-500 hover:text-gray-700 cursor-pointer">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="h-40 bg-gradient-to-r from-purple-400 to-blue-500 flex items-center justify-center rounded-lg">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" alt="Analytics Agent" class="h-32 w-32 object-contain">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-xl font-bold">Analitik Ajanı</h3>
+                        <p class="text-blue-600 font-semibold text-lg mt-2">₺1699/ay</p>
+                        <button class="w-full mt-4 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Sepete Ekle</button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-xl font-bold mb-4">Ajan Detayları</h3>
+                    <p class="text-gray-700 mb-4">Analitik Ajanı, işletmenizin tüm verilerini analiz eder ve anlamlı içgörüler sunar.</p>
+                    
+                    <h4 class="font-semibold mb-2">Özellikler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Veri toplama ve analiz</li>
+                        <li>Özelleştirilmiş raporlar</li>
+                        <li>Gerçek zamanlı izleme</li>
+                        <li>Trend analizi</li>
+                        <li>Performans önerileri</li>
+                        <li>API entegrasyonları</li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Gereksinimler:</h4>
+                    <ul class="list-disc pl-5 mb-4 space-y-2 text-gray-700">
+                        <li>Veri kaynakları</li>
+                        <li>Analitik hedefler</li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Müşteri Yorumları:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.9 (178 yorum)</span>
+                            </div>
+                            <p class="text-gray-700 italic">"Analitik Ajanı sayesinde karar verme sürecimiz çok daha verimli hale geldi!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Dark mode functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const icon = darkModeToggle.querySelector('i');
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+        
+        // Toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Update icon
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* AgentI4 Custom Styles */
+.logo-gradient {
+    background: linear-gradient(90deg, #2563eb, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 700px;
+    width: 95vw;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    position: relative;
+}
+.modal.show {
+    display: flex;
+}
+
+.chatbot {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1100;
+}
+.chatbot-container {
+    display: none;
+    position: fixed;
+    bottom: 6.5rem;
+    right: 2rem;
+    width: 350px;
+    max-width: 95vw;
+    height: 500px;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    z-index: 1200;
+    flex-direction: column;
+}
+.chatbot-container.show {
+    display: flex;
+}
+
+@media (max-width: 640px) {
+    .chatbot-container {
+        right: 1rem;
+        bottom: 5.5rem;
+        width: 98vw;
+        height: 70vh;
+    }
+    .modal-content {
+        padding: 1rem;
+        max-width: 98vw;
+    }
+} 
